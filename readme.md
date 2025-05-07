@@ -95,7 +95,10 @@ Join table for **many-to-many** relationship between `Prescriptions` and `Medica
 | dosage           | VARCHAR(50) |                     |
 | frequency        | VARCHAR(50) |                     |
 
----
+--- 
+
+# ERD
+![ERD FOR IMAGE](hospital.png)
 
 ## 🔧 How to Use
 
