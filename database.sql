@@ -24,9 +24,16 @@ email VARCHAR(100) UNIQUE
 -- Table: Specializations
 CREATE TABLE Specializations (
 specialization_id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(50) NOT NULL UNIQUE,
+name VARCHAR(50) NOT NULL UNIQUE
+);
+-- Table: Doctor_Specialization (Many-to-Many)
+-- This table links doctors to their specializations
+CREATE TABLE Doctor_Specialization (
 doctor_id INT NOT NULL,
-FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id)
+specialization_id INT NOT NULL,
+PRIMARY KEY (doctor_id, specialization_id),
+FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id),
+FOREIGN KEY (specialization_id) REFERENCES Specializations(specialization_id)
 );
 
 -- Table: Appointments
