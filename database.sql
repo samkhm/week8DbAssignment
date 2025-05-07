@@ -24,7 +24,9 @@ email VARCHAR(100) UNIQUE
 -- Table: Specializations
 CREATE TABLE Specializations (
 specialization_id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(50) NOT NULL UNIQUE
+name VARCHAR(50) NOT NULL UNIQUE,
+doctor_id INT NOT NULL,
+FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id)
 );
 
 -- Table: Appointments
